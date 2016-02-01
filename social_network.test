@@ -46,3 +46,29 @@ CREATE TABLE links(
      email VARCHAR(15) ,
      foreign key (userId) references users(userId)
      );
+
+
+
+
+INSERT INTO users (userId, userName, email,password)
+VALUES ('1','Surya','thotasuryaprakash246@gmail.com','surya246');
+
+INSERT INTO users (userId, userName, email,password)
+VALUES ('2','Pradeep','pradeeepkmalve@gmail.com','pradeepmalve');
+
+INSERT INTO users (userId, userName, email,password)
+VALUES ('3','Chaitanya','chaitanyaeluri@gmail.com','chaitanya');
+
+
+INSERT INTO users (userId, userName, email,password)
+VALUES ('4','Kartheek','kartheekchilvery@gmail.com','kartheek');
+
+INSERT INTO users (userId, userName, email,password)
+VALUES ('5','Geethanjali','geetanjali@gmail.com','anjali');
+
+INSERT INTO users (userId, userName, email,password)
+VALUES ('6','Priyanka','priyankasiddana@gmail.com','priyanka');
+
+
+
+
