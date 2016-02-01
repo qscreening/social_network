@@ -71,4 +71,26 @@ VALUES ('6','Priyanka','priyankasiddana@gmail.com','priyanka');
 
 
 
+INSERT INTO userProfile (userId,email,phone,image)
+VALUES ('1','thotasuryaprakash246@gmail.com','9553118466',' ');
+
+
+INSERT INTO userProfile (userId,email,phone,image)
+VALUES ('2','pradeeepkmalve@gmail.com','8019444890','');
+
+INSERT INTO userProfile (userId,email,phone,image)
+VALUES ('3','chaitanyaeluri@gmail.com','1234567890','');
+
+INSERT INTO userProfile (userId,email,phone,image)
+VALUES ('4','kartheekchilvery@gmail.com','1234567890',' ');
+
+INSERT INTO userProfile (userId,email,phone,image)
+VALUES ('5','geetanjali@gmail.com','1234567890','');
+
+INSERT INTO userProfile (userId,email,phone,image)
+VALUES ('6','priyankasiddana@gmail.com','123456789',' ');
+
+
+DELETE FROM userProfile
+WHERE userId = 5;
 
