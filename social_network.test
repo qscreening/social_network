@@ -1,5 +1,48 @@
 CREATE DATABASE social_network_development;
 
-CREATE TABLE USERS(userId integer(5) primary key not null , userName VARCHAR(10) , email VARCHAR(20) , password VARCHAR(15));
+CREATE TABLE users(
+	userId integer(5) primary key not null , 
+	userName VARCHAR(10) ,
+	email VARCHAR(20) , 
+	password VARCHAR(15)
+);
 
-CREATE TABLE USER_PROFILE(userId integer(5) , email VARCHAR(20) , Phone integer(15) Image BLOB), (FOREIGN KEY (userId , email) REFERENCES USER_PROFILE(userId,email)));
+
+CREATE TABLE userProfile(
+     userId integer(5) not null, 
+     email VARCHAR(20) , 
+     Phone integer(15) ,
+     image BLOB not null, 
+     foreign key (userId) references users(userId)
+     );
+
+
+CREATE TABLE posts(
+     userId integer(5) , 
+     content VARCHAR(100) , 
+     email VARCHAR(15) ,
+     foreign key (userId) references users(userId)
+     );
+
+CREATE TABLE images(
+     userId integer(5) , 
+     content VARCHAR(100) , 
+     email VARCHAR(15) ,
+     foreign key (userId) references users(userId)
+     );
+
+
+CREATE TABLE videos(
+     userId integer(5) , 
+     content VARCHAR(100) , 
+     email VARCHAR(15) ,
+     foreign key (userId) references users(userId)
+     );
+
+
+CREATE TABLE links(
+     userId integer(5) , 
+     content VARCHAR(100) , 
+     email VARCHAR(15) ,
+     foreign key (userId) references users(userId)
+     );
