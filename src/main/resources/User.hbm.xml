@@ -7,7 +7,7 @@
 	<class name="com.example.hibernate.User" table="USERS">
 		<id name="userId" type="int" column="USER_ID" ><generator class="assigned"/>
 		</id>
-		<property name="username">
+		<property name="userName">
 			<column name="USERNAME" />
 		</property>
 		 <property name="email">
