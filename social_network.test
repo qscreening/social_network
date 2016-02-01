@@ -1,0 +1,5 @@
+CREATE DATABASE social_network_development;
+
+CREATE TABLE USERS(userId integer(5) primary key not null , userName VARCHAR(10) , email VARCHAR(20) , password VARCHAR(15));
+
+CREATE TABLE USER_PROFILE(userId integer(5) , email VARCHAR(20) , Phone integer(15) Image BLOB), (FOREIGN KEY (userId , email) REFERENCES USER_PROFILE(userId,email)));
