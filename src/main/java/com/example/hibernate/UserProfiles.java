@@ -6,7 +6,7 @@ import java.Sql.Blob;
 
 @Entity
 @Table(name="userProfiles")
-public class UserProfile implements serializable{
+public class UserProfiles implements serializable{
 	@Column(name="userId")
 	private int userId;	
 	@Column(name="email")
