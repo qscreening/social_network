@@ -1,8 +1,8 @@
+package com.example.hibernate;
 import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import java.util.ArrayList;
 import org.hibernate.Session;
 import java.util.List;
 import org.hibernate.Query;
@@ -10,12 +10,12 @@ import java.util.Iterator;
 
 @RestController
 public class Social_networkController {
-	@RequestMapping("/social_networkController")
- 	 public ArrayList network() {
+	@RequestMapping("/Social_networkController")
+ 	 public List network() {
                 Session session = HibernateSessionManager.getSessionFactory().openSession();
 		session.beginTransaction();
-		Query query = session.createQuery("from posts");
-		ArrayList list = query.list();
+		Query query = session.createQuery("from user");
+		List list = query.list();
 		session.save(list);
 		session.getTransaction().commit();
 		return list;
