@@ -16,28 +16,29 @@ public class UserProfiles implements serializable{
 	@Column(name="image")
 	private Blob image;
 
-	public int getuserId(){
+
+	public int getUserId(){
 	return userId;
 	}
-	public void  setuserId(int userId){
+	public void  setUserId(int userId){
 	this.userId = userId;
 	}
-	public String getemail(){
+	public String getEmail(){
 	return email;
 	}
-	public void setemail(String email){
+	public void setEmail(String email){
 	this.email = email;
 	}
-	public double getphone(){
+	public double getPhone(){
 	return phone;
 	}
-	public void setphone(double phone){
+	public void setPhone(double phone){
 	this.phone = phone;
 	}
-	public Blob getimage(){
+	public Blob getImage(){
 	return image;
 	}
-	public void setimage(Blob image){
+	public void setImage(Blob image){
 	this.image = image;
 	}
 }
