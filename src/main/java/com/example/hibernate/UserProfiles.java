@@ -16,6 +16,7 @@ public class UserProfiles implements serializable{
 	@Column(name="image")
 	private Blob image;
 
+
 	public int getUserId(){
 	return userId;
 	}
