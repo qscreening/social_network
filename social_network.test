@@ -3,49 +3,65 @@ CREATE DATABASE social_network_development;
 CREATE TABLE users(
 	userId integer(5) primary key not null , 
 	userName VARCHAR(10) ,
-	email VARCHAR(20) , 
+	email VARCHAR(50) , 
 	password VARCHAR(15)
-);
+	);
 
 
-CREATE TABLE userProfile(
-     userId integer(5) not null, 
-     email VARCHAR(20) , 
-     Phone BIGINT(15) ,
-     image BLOB not null, 
-     foreign key (userId) references users(userId)
-     );
+CREATE TABLE userProfiles(
+     	userId integer(5) not null, 
+     	email VARCHAR(50) , 
+     	Phone BIGINT(15) ,
+     	image BLOB not null, 
+     	foreign key (userId) references users(userId)
+     	);
 
 
 CREATE TABLE posts(
-     userId integer(5) , 
-     content VARCHAR(100) , 
-     email VARCHAR(15) ,
-     foreign key (userId) references users(userId)
-     );
+     	userId integer(5) , 
+     	content VARCHAR(100) , 
+     	email VARCHAR(50) ,
+     	foreign key (userId) references users(userId)
+     	);
 
 CREATE TABLE images(
-     userId integer(5) , 
-     content VARCHAR(100) , 
-     email VARCHAR(15) ,
-     foreign key (userId) references users(userId)
-     );
+     	userId integer(5) , 
+     	content VARCHAR(100) , 
+     	email VARCHAR(15) ,
+     	foreign key (userId) references users(userId)
+     	);
 
 
 CREATE TABLE videos(
-     userId integer(5) , 
-     content VARCHAR(100) , 
-     email VARCHAR(15) ,
-     foreign key (userId) references users(userId)
-     );
+    	userId integer(5) , 
+     	content VARCHAR(100) , 
+     	email VARCHAR(50) ,
+     	foreign key (userId) references users(userId)
+     	);
 
 
 CREATE TABLE links(
-     userId integer(5) , 
-     content VARCHAR(100) , 
-     email VARCHAR(15) ,
-     foreign key (userId) references users(userId)
-     );
+	userId integer(5) , 
+     	content VARCHAR(100) , 
+     	email VARCHAR(15) ,
+     	foreign key (userId) references users(userId)
+	);
+CREATE TABLE groups(
+	groupId integer(10) primary key not null AUTO_INCREMENT,
+	groupName VARCHAR(50) not null,
+	groupAdmin VARCHAR(50) not null
+	);
+
+CREATE TABLE groupMembers(
+	id integer(10) primary key not null,
+	memberId integer(10) not null,
+	groupId integer(10) not null,
+	groupAdmin Boolean not null,
+	foreign key (groupId) references groups(groupId),
+	foreign key (memberId) references users(userId)
+	);
+
+
 
 
 	/* users data */
@@ -72,23 +88,23 @@ CREATE TABLE links(
 
 	/* userProfile data*/	
 
-	INSERT INTO userProfile (userId,email,phone,image)
+	INSERT INTO userProfiles (userId,email,phone,image)
 	VALUES ('1','thotasuryaprakash246@gmail.com','9553118466',' ');
 
 
-	INSERT INTO userProfile (userId,email,phone,image)
+	INSERT INTO userProfiles (userId,email,phone,image)
 	VALUES ('2','pradeeepkmalve@gmail.com','8019444890','');
 
-	INSERT INTO userProfile (userId,email,phone,image)
+	INSERT INTO userProfiles (userId,email,phone,image)
 	VALUES ('3','chaitanyaeluri@gmail.com','1234567890','');
 
-	INSERT INTO userProfile (userId,email,phone,image)
+	INSERT INTO userProfiles (userId,email,phone,image)
 	VALUES ('4','kartheekchilvery@gmail.com','1234567890',' ');
 
-	INSERT INTO userProfile (userId,email,phone,image)
+	INSERT INTO userProfiles (userId,email,phone,image)
 	VALUES ('5','geet2anju@gmail.com','1234567890','');
 
-	INSERT INTO userProfile (userId,email,phone,image)
+	INSERT INTO userProfiles (userId,email,phone,image)
 	VALUES ('6','priyankasiddana@gmail.com','123456789',' ');
 
 
@@ -115,21 +131,6 @@ CREATE TABLE links(
 
 	/* group tables */
 
-
-CREATE TABLE groups(
-	groupId integer(10) primary key not null AUTO_INCREMENT,
-	groupName VARCHAR(50) not null,
-	groupAdmin VARCHAR(50) not null
-);
-
-CREATE TABLE groupMembers(
-	id integer(10) primary key not null,
-	memberId integer(10) not null,
-	groupId integer(10) not null,
-	groupAdmin Boolean not null,
-	foreign key (groupId) references groups(groupId),
-	foreign key (memberId) references users(userId)
-);
 
 
 
