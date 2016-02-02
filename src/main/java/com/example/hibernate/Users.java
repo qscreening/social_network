@@ -8,7 +8,7 @@ public class Users implements Serializable{
 	@Column(name="userId")
 	private int userId;
 	@Column(name="userName")
-	private String useName;	
+	private String userName;	
 	@Column(name="email")
 	private String email;
 	@Column(name="password")
@@ -18,13 +18,13 @@ public class Users implements Serializable{
 	return userId;
 	}
 	public void setUserId(int userId) {
-	this.postId = userName;
+	this.userId = userId;
 	}
 	public int getUserName() {
-	return userId;
+	return userName;
 	}
 	public void setUserName(int userName) {
-	this.postId = userName;
+	this.userName = userName;
 	}
 	public String getEmail() {
 	return email;
