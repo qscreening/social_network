@@ -13,22 +13,22 @@ public class Images implements serializable{
 	@Column(name="email")
 	private String email;
 	
-	public int getuserId(){
+	public int getUserId(){
 	return userId;
 	}
-	public void setuserId(int userId){
+	public void setUserId(int userId){
 	this.userId = userId;
 	}
-	public int getcontent(){
+	public int getContent(){
 	return content;
 	}
-	public void setcontent(String content){
+	public void setContent(String content){
 	this.content = content;
 	}
-	public int getemail(){
+	public int getEmail(){
 	return email;
 	}
-	public void setemail(String email){
+	public void setEmail(String email){
 	this.email = email;
 	}
 }

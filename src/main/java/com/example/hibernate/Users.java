@@ -14,22 +14,28 @@ public class Users implements Serializable{
 	@Column(name="password")
 	private String password;
 
-	public int getuserId() {
+	public int getUserId() {
 	return userId;
 	}
-	public void setuserNameId(int userId) {
+	public void setUserId(int userId) {
 	this.postId = userName;
 	}
-	public String getemail() {
+	public int getUserName() {
+	return userId;
+	}
+	public void setUserName(int userName) {
+	this.postId = userName;
+	}
+	public String getEmail() {
 	return email;
 	}
-	public void setemail(String title) {
+	public void setEmail(String email) {
 	this.email = email;
 	}
-	public String getpassword() {
+	public String getPassword() {
 	return password;
 	}
-	public void setpassword(String body) {
+	public void setPassword(String password) {
 	this.password = password;
 	}
 	
