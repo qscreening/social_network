@@ -9,13 +9,15 @@ import org.hibernate.Query;
 import java.util.Iterator; 
 
 @RestController
-public class NetworkController {
-	@RequestMapping("/Network")
+public class Social_networkController {
+	@RequestMapping("/social_networkController")
  	 public ArrayList network() {
                 Session session = HibernateSessionManager.getSessionFactory().openSession();
 		session.beginTransaction();
 		Query query = session.createQuery("from posts");
 		ArrayList list = query.list();
+		session.save(list);
+		session.getTransaction().commit();
 		return list;
 	}
 }
