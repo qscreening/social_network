@@ -1,4 +1,5 @@
 package com.example.social_network;
+
 import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,7 +15,7 @@ public class Social_networkController {
  	 public List network() {
                 Session session = HibernateSessionManager.getSessionFactory().openSession();
 		session.beginTransaction();
-		Query query = session.createQuery("from user");
+		Query query = session.createQuery("from users");
 		List list = query.list();
 		session.save(list);
 		session.getTransaction().commit();
