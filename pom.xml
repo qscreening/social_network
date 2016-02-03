@@ -3,7 +3,7 @@
  <modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.example.social_network</groupId>
-	<artifactId>socilal_network</artifactId>
+	<artifactId>social_network</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
