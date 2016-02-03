@@ -1,2 +1,4 @@
 src/main/resources/hibernate.cfg.xml
 target
+src/main/resources/social_network.cfg.xml.example
+
