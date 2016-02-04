@@ -82,7 +82,7 @@ INSERT INTO posts(userId,content,email)	VALUES
 
 
 
-/* group tables */
+	/* groups tables */
 
 
 CREATE TABLE groups(
