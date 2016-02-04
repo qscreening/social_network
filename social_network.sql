@@ -81,23 +81,6 @@ INSERT INTO posts(userId,content,email)	VALUES
 	('6','video','priyankasiddana@gmail.com');
 
 
-	/* group tables */
-
-
-CREATE TABLE groups(
-	groupId integer(10) primary key not null AUTO_INCREMENT,
-	groupName VARCHAR(50) not null,
-	groupAdmin VARCHAR(50) not null
-);
-
-CREATE TABLE groupMembers(
-	id integer(10) primary key not null,
-	memberId integer(10) not null,
-	groupId integer(10) not null,
-	groupAdmin Boolean not null,
-	foreign key (groupId) references groups(groupId),
-	foreign key (memberId) references users(userId)
-);
 
 /* group tables */
 
