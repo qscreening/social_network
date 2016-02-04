@@ -3,12 +3,14 @@ package com.example.social_network;
 import java.util.Set;
 import javax.persistence.*;
 import java.io.*;
+import java.io.Serializable;
 
 
 @Entity
-@Table(name="Posts")
-public class Post{
+@Table(name="posts")
+public class Post implements Serializable{
 //	@ManyToOne
+	@Id
 	@Column(name="userId")
 	private int userId;		
 	@Column(name="content")
