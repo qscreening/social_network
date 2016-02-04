@@ -13,12 +13,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @RestController
-public class Social_networkController {
-	@RequestMapping("/Social_networkController")
+public class PostController {
+	@RequestMapping("/post")
 	public List network(){
-		UserDAO gld=new UserDAO();
+		PostDAO gld=new PostDAO();
 		List list=gld.getAll();
 		System.out.println(list);
- 		return list;
+		return list;
 	}
 }
