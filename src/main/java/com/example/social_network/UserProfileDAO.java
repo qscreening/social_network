@@ -6,18 +6,17 @@ import java.util.List;
 import java.util.ArrayList;
 import org.hibernate.Query;
   
-
-public class PostDAO {  
-
-public List<Post> getAll(){
-        List<Post> list = new ArrayList<Post>();
+public class UserProfileDAO {  
+	
+public List<UserProfile> getAll(){
+        List<UserProfile> list = new ArrayList<UserProfile>();
        
         Session session = HibernateSessionManager.getSessionFactory().openSession();
         Transaction tx = null;       
         try {
             tx = session.beginTransaction();
             tx.begin();
-            list = session.createQuery("from Post").list();                       
+            list = session.createQuery("from UserProfile").list();                       
             tx.commit();
         } catch (Exception e) {
             if (tx != null) {

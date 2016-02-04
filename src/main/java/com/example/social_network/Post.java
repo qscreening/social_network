@@ -7,6 +7,7 @@ import java.io.Serializable;
 
 
 @Entity
+
 @Table(name="posts")
 public class Post implements Serializable{
        	@Id

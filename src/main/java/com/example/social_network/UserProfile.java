@@ -15,11 +15,9 @@ public class UserProfile implements Serializable {
 	@Column(name="email")
 	private String email;
 	@Column(name="phone")
-	private double phone;
-//	@Column(name="image")
-//	private Image image;
-
-
+	private long phone;
+       //@Column(name="image")
+       //private Image image;
 	/*public int getUserId(){
 	return userId;
 	}
@@ -32,10 +30,10 @@ public class UserProfile implements Serializable {
 	public void setEmail(String email){
 	this.email = email;
 	}
-	public double getPhone(){
+	public long getPhone(){
 	return phone;
 	}
-	public void setPhone(double phone){
+	public void setPhone(long phone){
 	this.phone = phone;
 	}
 /*	public Blob getImage(){
