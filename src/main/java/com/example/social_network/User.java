@@ -6,13 +6,14 @@ import java.io.*;
 import javax.persistence.Id;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import java.io.Serializable;
 
 @Entity
 @Table(name="users")
 public class User implements Serializable{
 	@Id
-	@OneToOne(mappedBy="user")
-   	private UserProfile userProfile;
+	//@OneToOne(mappedBy="user")
+   	//private UserProfile userProfile;
 
 	@Column(name="userId")
 	private int userId;

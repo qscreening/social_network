@@ -16,7 +16,7 @@ public List<User> getAll(){
         try {
             tx = session.beginTransaction();
             tx.begin();
-            list = session.createQuery("from users").list();                       
+            list = session.createQuery("from User").list();                       
             tx.commit();
         } catch (Exception e) {
             if (tx != null) {

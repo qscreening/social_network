@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 @RestController
 public class Social_networkController {
 	@RequestMapping("/Social_networkController")
-	public void network(){
+	public List network(){
 		UserDAO gld=new UserDAO();
 		List list=gld.getAll();
 		System.out.println(list);
@@ -34,9 +34,9 @@ public class Social_networkController {
 		Query query = session.createQuery("from users");
 		List list = query.list();
 		//session.save(list);
-		session.getTransaction().commit();
-		String str="chaitanya";*/
-		//return list;
+		session.getTransaction().commit();*/
+		
+		return list;
 	}
 }
 

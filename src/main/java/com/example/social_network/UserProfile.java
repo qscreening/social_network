@@ -3,14 +3,15 @@ package com.example.social_network;
 import java.util.Set;
 import javax.persistence.*;
 import java.io.*;
+import java.io.Serializable;
 
-@Embeddable
+@Entity
 @Table(name="userProfiles")
-public class UserProfile {
+public class UserProfile implements Serializable {
 	@Id
-	@OneToOne
-	@JoinColumn(name ="userId")
-	public User user;
+	//@OneToOne
+	//@JoinColumn(name ="userId")
+	//public User user;
 	@Column(name="email")
 	private String email;
 	@Column(name="phone")
