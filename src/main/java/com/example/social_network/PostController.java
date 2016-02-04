@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @RestController
-public class Social_networkController {
-	@RequestMapping("/Social_networkController")
+public class PostController {
+	@RequestMapping("/PostController")
 	public List network(){
 		PostDAO gld=new PostDAO();
 		List list=gld.getAll();

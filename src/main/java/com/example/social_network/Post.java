@@ -3,23 +3,24 @@ package com.example.social_network;
 import java.util.Set;
 import javax.persistence.*;
 import java.io.*;
+import java.io.Serializable;
 
 
 @Entity
-@Table(name="Posts")
-public class Post{
-        @OneToMany
-        @Column(name = "UserId")
-        private int UserId;
+@Table(name="posts")
+public class Post implements Serializable{
+       	@Id
+        @Column(name = "userId")
+        private int userId;
 	@Column(name="content")
 	private String content;
 	@Column(name="email")
 	private String email;
 	public int getUserId(){
-	return UserId;
+	return userId;
 	}
 	public void setUserId(int userId){
-	this.UserId = UserId;
+	this.userId = userId;
 	}
 	public String getContent(){
 	return content;
