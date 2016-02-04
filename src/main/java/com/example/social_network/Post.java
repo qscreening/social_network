@@ -8,19 +8,18 @@ import java.io.*;
 @Entity
 @Table(name="Posts")
 public class Post{
-//	@ManyToOne
-	@Column(name="userId")
-	private int userId;		
+        @OneToMany
+        @Column(name = "UserId")
+        private int UserId;
 	@Column(name="content")
 	private String content;
 	@Column(name="email")
 	private String email;
-	
 	public int getUserId(){
-	return userId;
+	return UserId;
 	}
 	public void setUserId(int userId){
-	this.userId = userId;
+	this.UserId = UserId;
 	}
 	public String getContent(){
 	return content;

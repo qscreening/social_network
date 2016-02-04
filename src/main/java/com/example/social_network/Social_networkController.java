@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 @RestController
 public class Social_networkController {
-	@RequestMapping("/Social_networkController")
+	@RequestMapping("/Social_network")
  	 public List network(HttpServletRequest request,HttpServletResponse response)
            throws Exception {
 		/*(System.out.println("entering into social_networkController");
@@ -30,7 +30,7 @@ public class Social_networkController {
 		List list = query.list();
 		//session.save(list);
 		session.getTransaction().commit();
-		String str="chaitanya";
+		String str="pradeep";
 		return list;
 	}
 }
