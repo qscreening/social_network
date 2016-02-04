@@ -14,7 +14,12 @@ import javax.servlet.http.HttpServletResponse;
 @RestController
 public class Social_networkController {
 	@RequestMapping("/Social_networkController")
- 	 public List network(HttpServletRequest request,HttpServletResponse response)
+	public void network(){
+		UserDAO gld=new UserDAO();
+		List list=gld.getAll();
+		System.out.println(list);
+		
+ 	 /*public List network(HttpServletRequest request,HttpServletResponse response)
            throws Exception {
 		/*(System.out.println("entering into social_networkController");
 		 int id=Integer.parseInt(request.getParameter("id"));
@@ -22,16 +27,16 @@ public class Social_networkController {
 		 ArrayList l=new ArrayList();
 		 l.add(id);
 		 l.add(tableName);*/
-                Session session = HibernateSessionManager.getSessionFactory().openSession();
+                /*Session session = HibernateSessionManager.getSessionFactory().openSession();
 		System.out.println(session);
 		session.beginTransaction();
 		//String qry="from "+ tableName+" where id="+id;
-		Query query = session.createQuery("from posts");
+		Query query = session.createQuery("from users");
 		List list = query.list();
 		//session.save(list);
 		session.getTransaction().commit();
-		String str="chaitanya";
-		return list;
+		String str="chaitanya";*/
+		//return list;
 	}
 }
 
