@@ -20,24 +20,6 @@ public class UserController {
 		UserDAO gld=new UserDAO();
 		List list=gld.getAll();
 		System.out.println(list);
-		
- 	 	/*public List network(HttpServletRequest request,HttpServletResponse response)
-           	throws Exception {
-		/*(System.out.println("entering into social_networkController");
-		 int id=Integer.parseInt(request.getParameter("id"));
-		 String tableName=request.getParameter("tableName");
-		 ArrayList l=new ArrayList();
-		 l.add(id);
-		 l.add(tableName);*/
-                /*Session session = HibernateSessionManager.getSessionFactory().openSession();
-		System.out.println(session);
-		session.beginTransaction();
-		//String qry="from "+ tableName+" where id="+id;
-		Query query = session.createQuery("from users");
-		List list = query.list();
-		//session.save(list);
-		session.getTransaction().commit();*/
-		
 		return list;
 	}
 }

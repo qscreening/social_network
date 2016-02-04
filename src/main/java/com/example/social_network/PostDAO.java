@@ -6,8 +6,9 @@ import java.util.List;
 import java.util.ArrayList;
 import org.hibernate.Query;
   
-public class 	PostDAO {  
-	
+
+public class PostDAO {  
+
 public List<Post> getAll(){
         List<Post> list = new ArrayList<Post>();
        

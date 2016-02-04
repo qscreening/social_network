@@ -14,11 +14,11 @@ import javax.servlet.http.HttpServletResponse;
 
 @RestController
 public class PostController {
-	@RequestMapping("/post")
+	@RequestMapping("/PostController")
 	public List network(){
 		PostDAO gld=new PostDAO();
 		List list=gld.getAll();
 		System.out.println(list);
-		return list;
+ 		return list;
 	}
 }
