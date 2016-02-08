@@ -12,17 +12,29 @@ import java.io.Serializable;
 @Table(name="users")
 public class User implements Serializable{
 	@Id
-	//@OneToOne(mappedBy="user")
-   	//private UserProfile userProfile;
-
-	@Column(name="userId")
-	private int userId;
+	@GeneratedValue
+	//(mappedBy="users")
+   	@Column(name="userId")
+   	private int userId;
 	@Column(name="userName")
 	private String userName;	
 	@Column(name="email")
 	private String email;
 	@Column(name="password")
 	private String password;
+	@OneToOne(mappedBy="user") 
+	//@PrimaryKeyJoinColumn
+   	private UserProfile userProfile;
+   	
+
+    public UserProfile getUserProfile(){
+        return this.userProfile;
+    }
+
+    public void setUserProfile(UserProfile userProfile){
+        this.userProfile = userProfile;
+    }
+	
 
 	public int getUserId(){
 	return userId;

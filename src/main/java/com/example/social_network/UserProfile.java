@@ -4,26 +4,38 @@ import java.util.Set;
 import javax.persistence.*;
 import java.io.*;
 import java.io.Serializable;
-
+import java.io.*;
 @Entity
 @Table(name="userProfiles")
-public class UserProfile implements Serializable {
-	@Id
-	//@OneToOne
-	//@JoinColumn(name ="userId")
-	//public User user;
+public class UserProfile implements Serializable{
+        @Id
+	@GeneratedValue
+	@Column(name="userId")
+        private int userId;
 	@Column(name="email")
 	private String email;
 	@Column(name="phone")
 	private long phone;
-       //@Column(name="image")
-       //private Image image;
-	/*public int getUserId(){
+       
+	@OneToOne
+	@PrimaryKeyJoinColumn
+	private User user;
+
+/*	public User getUser() {
+        return this.user;
+        }
+
+        public void setUser(User user) {
+        this.user = user;
+        }
+*/
+	public int getUserId(){
 	return userId;
 	}
 	public void  setUserId(int userId){
 	this.userId = userId;
-	}*/
+	}
+	
 	public String getEmail(){
 	return email;
 	}
@@ -36,10 +48,5 @@ public class UserProfile implements Serializable {
 	public void setPhone(long phone){
 	this.phone = phone;
 	}
-/*	public Blob getImage(){
-	return image;
-	}
-	public void setImage(Blob image){
-	this.image = image;
-	}*/
+    	
 }
