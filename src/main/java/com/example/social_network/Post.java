@@ -7,16 +7,20 @@ import java.io.Serializable;
 
 
 @Entity
-
 @Table(name="posts")
 public class Post implements Serializable{
-       	@Id
-        @Column(name = "userId")
+	@Id @GeneratedValue
+	@Column (name = "userId")
         private int userId;
 	@Column(name="content")
 	private String content;
 	@Column(name="email")
 	private String email;
+
+	@ManyToOne
+	@JoinColumn(name="userId", insertable=false,updatable=false)
+        private User user;
+	
 	public int getUserId(){
 	return userId;
 	}

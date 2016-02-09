@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @RestController
 public class UserController {
-	@RequestMapping("/Social_networkController")
+	@RequestMapping("/UserController")
 	public List network(){
 		UserDAO gld=new UserDAO();
 		List list=gld.getAll();

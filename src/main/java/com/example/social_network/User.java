@@ -3,19 +3,13 @@ package com.example.social_network;
 import java.util.Set;
 import javax.persistence.*;
 import java.io.*;
-import javax.persistence.Id;
-import javax.persistence.Column;
-import javax.persistence.Entity;
 import java.io.Serializable;
 
 @Entity
 @Table(name="users")
 public class User implements Serializable{
-	@Id
-	//@OneToOne(mappedBy="user")
-   	//private UserProfile userProfile;
-
-	@Column(name="userId")
+	@Id @GeneratedValue
+        @Column(name="userId")
 	private int userId;
 	@Column(name="userName")
 	private String userName;	
@@ -23,6 +17,16 @@ public class User implements Serializable{
 	private String email;
 	@Column(name="password")
 	private String password;
+
+	@OneToMany(mappedBy="user", fetch=FetchType.LAZY)
+   	private Set<Post> posts;
+
+	public Set<Post> getPosts(){
+	return this.posts;
+	}
+	public void setPosts(Set<Post> posts){
+	this.posts= posts;
+	}
 
 	public int getUserId(){
 	return userId;

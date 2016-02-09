@@ -1,9 +1,9 @@
 $(document).ready(function(){
-	alert();
-	//$.ajax({url: "PostController", success: function(result){
-	alert(1);
+	$("#up").click(function(){
+	$.ajax({url: "signUp", success: function(result){
 	console.log(result);
+
 	} });
-  		 	
+  		}); 	
 
 });
