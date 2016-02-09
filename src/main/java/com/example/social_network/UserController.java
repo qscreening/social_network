@@ -15,7 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 
 @RestController
 public class UserController {
+
 	@RequestMapping("/UserController")
+
 	public List network(){
 		UserDAO gld=new UserDAO();
 		List list=gld.getAll();

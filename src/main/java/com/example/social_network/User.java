@@ -8,15 +8,30 @@ import java.io.Serializable;
 @Entity
 @Table(name="users")
 public class User implements Serializable{
+
 	@Id @GeneratedValue
         @Column(name="userId")
 	private int userId;
+
 	@Column(name="userName")
 	private String userName;	
 	@Column(name="email")
 	private String email;
 	@Column(name="password")
 	private String password;
+	@OneToOne(mappedBy="user") 
+	//@PrimaryKeyJoinColumn
+   	private UserProfile userProfile;
+   	
+
+    public UserProfile getUserProfile(){
+        return this.userProfile;
+    }
+
+    public void setUserProfile(UserProfile userProfile){
+        this.userProfile = userProfile;
+    }
+	
 
 	@OneToMany(mappedBy="user", fetch=FetchType.LAZY)
    	private Set<Post> posts;
