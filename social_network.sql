@@ -1,14 +1,15 @@
 CREATE DATABASE social_network_development;
 
 CREATE TABLE users(
-	userId integer(5) primary key not null , 
+	userId integer(5)  not null AUTO_INCREMENT , 
 	userName VARCHAR(10) ,
 	email VARCHAR(20) , 
-	password VARCHAR(15)
+	password VARCHAR(15),
+	primary key(userId)
 );
 
 
-CREATE TABLE userProfile(
+CREATE TABLE userProfiles(
      userId integer(5) not null, 
      email VARCHAR(20) , 
      Phone BIGINT(15) ,
@@ -48,7 +49,7 @@ CREATE TABLE links(
      );
 
 
-	/* users data */
+	
 
 INSERT INTO users (userId, userName, email,password) VALUES 	
 	('1','Surya','thotasuryaprakash246@gmail.com','surya246'),
@@ -59,7 +60,7 @@ INSERT INTO users (userId, userName, email,password) VALUES
 	('6','Priyanka','priyankasiddana@gmail.com','priyanka');
 
 
-	/* userProfile data*/	
+
 
 INSERT INTO userProfile (userId,email,phone,image) VALUES	
 	('1','thotasuryaprakash246@gmail.com','9553118466',' '),		  	
@@ -70,7 +71,7 @@ INSERT INTO userProfile (userId,email,phone,image) VALUES
 	('6','priyankasiddana@gmail.com','123456789',' ');
 
 
-	/* posts data*/
+
 
 INSERT INTO posts(userId,content,email)	VALUES
 	('1','image','thotasuryaprakash246@gmail.com'),
@@ -81,8 +82,7 @@ INSERT INTO posts(userId,content,email)	VALUES
 	('6','video','priyankasiddana@gmail.com');
 
 
-
-	/* groups tables */
+	
 
 
 CREATE TABLE groups(
@@ -112,9 +112,6 @@ INSERT INTO groups(groupName,groupAdmin) values
 	(2, 5, 0),
 	(2, 6, 0);
 	
-
-
-
 
 
 
