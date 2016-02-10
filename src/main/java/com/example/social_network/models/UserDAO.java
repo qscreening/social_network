@@ -3,8 +3,11 @@ package com.example.social_network;
 import org.hibernate.Session;  
 import org.hibernate.Transaction;  
 import java.util.List;
-import java.util.ArrayList;
 import org.hibernate.Query;
+import java.util.List;
+import java.util.ArrayList;
+import org.hibernate.Criteria;
+import org.hibernate.FetchMode;
   
 public class UserDAO {  
 	
@@ -16,8 +19,12 @@ public List<User> getAll(){
         try {
             tx = session.beginTransaction();
             tx.begin();
-            list = session.createQuery("from User").list();                       
-            tx.commit();
+           // list = session.createQuery("from User").list(); 
+			Criteria criteria = session.createCriteria(User.class);
+			criteria.setFetchMode("Post", FetchMode.JOIN);
+			list = criteria.list();
+			session.save(list);
+			tx.commit();                      
         } catch (Exception e) {
             if (tx != null) {
                 tx.rollback();

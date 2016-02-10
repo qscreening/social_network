@@ -1,4 +1,3 @@
-
 package com.example.social_network;
 
 import java.util.concurrent.atomic.AtomicLong;
@@ -14,14 +13,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @RestController
-public class UserController {
-	@RequestMapping("/user")
-	public List network(){
-		UserDAO gld=new UserDAO();
-		List list=gld.getAll();
-		System.out.println(list);
-		return list;
+public class signUpController {
+	@RequestMapping("/signUp")
+	public String network(){
+		//UserDAO gld=new UserDAO();
+		//List list=gld.getAll();
+		System.out.println("welcome to spring");
+		return "hello" ;
 	}
 }
-
-
