@@ -3,14 +3,15 @@
 	<head>
 		<meta charset="utf-8">
 		<title>social_network Login page</title>
-		<link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
-		<link href="/css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
+		<link href="/css/bootstrap.min.css" rel="stylesheet"/>
+		<link href="/css/bootstrap-theme.min.css" rel="stylesheet"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	</head>
 	<body>
 		<div id="container">
 			<div class="input-lg">
 				<div class="col-sm-8 col-sm-offset-2 text-center">
-					<h1><strong>social_network</strong></h1>
+					<h1><b>amicisHub</b></h1>
 					<h2>Registration Form</h2>
 				</div>
 			</div>
@@ -24,16 +25,16 @@
 								</div>
 							</div>
 							<div class="form-bottom">
-								<form role="form" action="" method="post" class="registration-form" name="signInForm">
+								<form role="form" action="" method="" class="registration-form" name="signInForm">
 									<div class="form-group">
-										<label class="sr-only" for="form-userName">userName</label>
-										<input type="text" name="email" placeholder="User Id" class="userName form-control" id="userName">
+										
+										<input type="text" name="email" placeholder="Username" class="userName form-control" id="userName1">
 									</div>
 									<div class="form-group">
-										<label class="sr-only" for="form-password">password</label>
-										<input type="password" name="password" placeholder="Password" class="password form-control" id="password">
+										
+										<input type="password" name="password" placeholder="Password" class="password form-control" id="password1">
 									</div>
-									<button type="submit" class="btn btn-info" id="signIn">Sign In!</button>
+									<button type="button" value="submit" class="btn btn-info" id="btn1">Sign In!</button>
 								</form>
 							</div>
 						</div>
@@ -55,20 +56,24 @@
 								</div>
 							</div>
 							<div class="form-bottom">
-								<form role="form" action="" method="post" class="registration-form" name="signUpForm">
+								<form role="form" action="" method="" class="registration-form" id="signUpForm">
 									<div class="form-group">
-										<label class="sr-only" for="form-userName">userName</label>
-										<input type="text" name="fullName" placeholder="Full Name" class="userName form-control" id="userName">
+										
+										<input type="text" name="fullName" placeholder="Full Name" class="userName form-control" id="userName2">
 									</div>
 									<div class="form-group">
-										<label class="sr-only" for="form-password">password</label>
-										<input type="password" name="password" placeholder="Password" class="password form-control" id="password">
+										
+										<input type="text" name="fullName" placeholder="Email" class="userName form-control" id="userName3">
 									</div>
 									<div class="form-group">
-										<label class="sr-only" for="form-confirm password">confirm password</label>
-										<input type="password" name="confirmPassword" placeholder="Confirm Password" class="confirm password form-control" id="confirm password">
+										
+										<input type="password" name="password" placeholder="Password" class="password form-control" id="password2">
 									</div>
-									<button type="submit" class="btn btn-info">Sign up!</button>
+									<div class="form-group">
+										
+										<input type="password" name="confirmPassword" placeholder="Confirm Password" class="confirm password form-control" id="password3">
+									</div>
+									<button type="submit" id="btn2" class="btn btn-info">Sign up!</button>
 								</form>
 							</div>
 						</div>
@@ -77,8 +82,8 @@
 			</div>
 		</div>
 		<div class="input-lg"></div>
-		<script src="/js/jquery.min.js"></script>
 		<script src="/js/jquery.js"></script>
 		<script src="query.js" type="text/Javascript"></script>
+		<script src="/js/bootstrap.min.js"></script>
 	</body>
 </html>
