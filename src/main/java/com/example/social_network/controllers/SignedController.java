@@ -18,12 +18,12 @@ public class SignedController {
 	@RequestMapping(value ="/signin",method = RequestMethod.POST)
 	public boolean network(HttpServletRequest request,HttpServletResponse response)
            	throws Exception {
-		   	System.out.println("************************enter to controller*************");
-		   	String user_Name=request.getParameter("userName");
+		   	
+		   	String email=request.getParameter("Email");
 			String Password=request.getParameter("password");
-			System.out.println(Password);
+			
 			SignedDAO gld=new SignedDAO();
-			boolean result=gld.getAll(user_Name,Password);
+			boolean result=gld.getAll(email,Password);
 			return result;
 		}
 }

@@ -1,20 +1,15 @@
 $(document).ready(function(){
-	var userName="";
-  	var Password="";
-  	$("#userName1").on("keyup", function(){
-  	userName = $("#userName1").val();
-      //alert(userName);
-	});	
-          
- 	$("#password1").on("keyup", function(){
-        Password=$("#password1").val();
-       //alert(Password);
-   	});
-  	$("#btn1").click(function(){
-      	alert(userName);	
+	$("#signInForm").submit(function(e) {
+  	var email = $("#userName1").val();
+	var Password=$("#password1").val();
+  	      	alert(email);	
 	      	$.ajax({
-		      url: "signin", 
-		      data:{userName:userName,password:Password},
+		      url: "/signin", 
+		      data:
+		      {
+		      	Email:email,
+		      	password:Password
+		      },
 		      method: "post",
 		      success: function(result){ 
 			      if(result){ 
@@ -29,12 +24,13 @@ $(document).ready(function(){
 		    		alert("error occured")
 			 }
 	     	});
+	     	e.preventDefault();
  	});
  
 
 $("#signUpForm").submit(function(e) {
-  	var userName = $("#userName2").val();
-  	var email = $("#userName3").val();
+	var userName = $("#fullName").val();
+  	var email = $("#userName2").val();
         var Password=$("#password2").val();
         var cnfmPassword=$("#password3").val();
 
@@ -42,7 +38,7 @@ $("#signUpForm").submit(function(e) {
 	      	$.ajax({
 		      url: "/signUp", 
 		      data:{
-		      	userName:userName,
+		        userName:userName,
 		      	Email:email,
 		      	password:Password
 		      },

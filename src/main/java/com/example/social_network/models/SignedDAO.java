@@ -10,18 +10,30 @@ import org.hibernate.FetchMode;
  
 public class SignedDAO {  
 
-public boolean getAll(String userName,String Password){
+public boolean getAll(String email,String password){
        List<User> list = new ArrayList<User>();
-      
        Session session = HibernateSessionManager.getSessionFactory().openSession();
        Transaction tx = null; 
-         User user;      
+         User user =new User() ; 
+
+  
        try {
            tx = session.beginTransaction();
            tx.begin();
-           //String qry="from "+ tableName+" where id="+id;
+
            list = session.createQuery("from User").list(); 
+
+		for(int i=0; i<list.size();i++){
+
+			user=(User)list.get(i);
+			if(user.getEmail().equals(email) && user.getPassword().equals(password)){
+                        
+				return true;
+			}
+		}
+          session.save(user);
            tx.commit();
+		
            } catch (Exception e) {
            if (tx != null) {
                tx.rollback();
@@ -30,12 +42,7 @@ public boolean getAll(String userName,String Password){
        } finally {
            session.close();
        }
-       for(int i=0; i<list.size();i++){
-		user=(User)list.get(i);
-		if(user.getUserName().equals(userName) && user.getPassword().equals(Password)){
-			return true;
-		}
-	}
+       
 	return false;
     }
 } 

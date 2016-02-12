@@ -3,15 +3,16 @@ CREATE DATABASE social_network_development;
 CREATE TABLE users(
 	userId integer(5)  not null AUTO_INCREMENT , 
 	userName VARCHAR(10) ,
-	email VARCHAR(20) , 
-	password VARCHAR(15),
+	email VARCHAR(30) not null , 
+	password VARCHAR(20) not null,
 	primary key(userId)
+        unique(email)
 );
 
 
 CREATE TABLE userProfiles(
-     userId integer(5) not null, 
-     email VARCHAR(20) , 
+     userId integer(5), 
+     email VARCHAR(30) not null , 
      Phone BIGINT(15) ,
      image BLOB not null, 
      foreign key (userId) references users(userId)
@@ -21,14 +22,14 @@ CREATE TABLE userProfiles(
 CREATE TABLE posts(
      userId integer(5) , 
      content VARCHAR(100) , 
-     email VARCHAR(15) ,
+     email VARCHAR(30) not null ,
      foreign key (userId) references users(userId)
      );
 
 CREATE TABLE images(
      userId integer(5) , 
      content VARCHAR(100) , 
-     email VARCHAR(15) ,
+     email VARCHAR(30) not null,
      foreign key (userId) references users(userId)
      );
 
@@ -36,7 +37,7 @@ CREATE TABLE images(
 CREATE TABLE videos(
      userId integer(5) , 
      content VARCHAR(100) , 
-     email VARCHAR(15) ,
+     email VARCHAR(30) not null ,
      foreign key (userId) references users(userId)
      );
 
@@ -44,7 +45,7 @@ CREATE TABLE videos(
 CREATE TABLE links(
      userId integer(5) , 
      content VARCHAR(100) , 
-     email VARCHAR(15) ,
+     email VARCHAR(30) not null,
      foreign key (userId) references users(userId)
      );
 
