@@ -11,43 +11,44 @@ CREATE TABLE users(
 
 
 CREATE TABLE userProfiles(
-     userId integer(5), 
-     email VARCHAR(30) not null , 
-     Phone BIGINT(15) ,
-     image BLOB not null, 
-     foreign key (userId) references users(userId)
+	id integer (10) not null AUTO_INCREMENT,
+	userId integer(5), 
+	email VARCHAR(30) not null , 
+	Phone BIGINT(15) ,
+	primary key(id),
+	foreign key (userId) references users(userId)
      );
 
 
 CREATE TABLE posts(
-     userId integer(5) , 
-     content VARCHAR(100) , 
-     email VARCHAR(30) not null ,
-     foreign key (userId) references users(userId)
+	userId integer(5) , 
+	content VARCHAR(100) , 
+	email VARCHAR(30) not null ,
+	foreign key (userId) references users(userId)
      );
 
 CREATE TABLE images(
-     userId integer(5) , 
-     content VARCHAR(100) , 
-     email VARCHAR(30) not null,
-     foreign key (userId) references users(userId)
+	userId integer(5) , 
+	content VARCHAR(100) , 
+	email VARCHAR(30) not null,
+	foreign key (userId) references users(userId)
      );
 
 
 CREATE TABLE videos(
-     userId integer(5) , 
-     content VARCHAR(100) , 
-     email VARCHAR(30) not null ,
-     foreign key (userId) references users(userId)
+	userId integer(5) , 
+	content VARCHAR(100) , 
+	email VARCHAR(30) not null ,
+	foreign key (userId) references users(userId)
      );
 
 
 CREATE TABLE links(
-     userId integer(5) , 
-     content VARCHAR(100) , 
-     email VARCHAR(30) not null,
-     foreign key (userId) references users(userId)
-     );
+	userId integer(5) , 
+	content VARCHAR(100) , 
+	email VARCHAR(30) not null,
+	foreign key (userId) references users(userId)
+	);
 
 
 	
@@ -64,12 +65,12 @@ INSERT INTO users (userId, userName, email,password) VALUES
 
 
 INSERT INTO userProfile (userId,email,phone,image) VALUES	
-	('1','thotasuryaprakash246@gmail.com','9553118466',' '),		  	
-	('2','pradeeepkmalve@gmail.com','8019444890',''),
-	('3','chaitanyaeluri@gmail.com','1234567890',''),
-	('4','kartheekchilvery@gmail.com','1234567890',' '),
-	('5','geet2anju@gmail.com','1234567890',''),
-	('6','priyankasiddana@gmail.com','123456789',' ');
+	('1','thotasuryaprakash246@gmail.com','9553118466'),		  	
+	('2','pradeeepkmalve@gmail.com','8019444890'),
+	('3','chaitanyaeluri@gmail.com','1234567890'),
+	('4','kartheekchilvery@gmail.com','1234567890'),
+	('5','geet2anju@gmail.com','1234567890'),
+	('6','priyankasiddana@gmail.com','123456789');
 
 
 
@@ -82,10 +83,7 @@ INSERT INTO posts(userId,content,email)	VALUES
 	('5','video','geet2anju@gmail.com'),
 	('6','video','priyankasiddana@gmail.com');
 
-
 	
-
-
 CREATE TABLE groups(
 	groupId integer(10) primary key not null AUTO_INCREMENT,
 	groupName VARCHAR(50) not null,
