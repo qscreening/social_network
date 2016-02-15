@@ -12,15 +12,12 @@ import javax.servlet.http.HttpServletResponse;
 public class SignUpController {
 
 	@RequestMapping(value = "/signUp", method = RequestMethod.POST)
-	public boolean signUp(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		String userName = request.getParameter("userName");
-		String email = request.getParameter("Email");
+	public boolean doPost(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		String fullName = request.getParameter("userName");
+		String emailId = request.getParameter("Email");
 		String password = request.getParameter("password");
-
-
 		SignUpDao signUpDao = new SignUpDao();
-		boolean status = signUpDao.signUpUserDetails(userName, email, password);
-		
+		boolean status = signUpDao.signUpUserDetails(fullName, emailId, password);
 		return status;
 	}
 

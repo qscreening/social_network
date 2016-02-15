@@ -1,4 +1,7 @@
 package com.example.social_network;
+
+import java.lang.Object;
+import java.security.*;
  
 import org.hibernate.Session;  
 import org.hibernate.Transaction;  
@@ -10,30 +13,36 @@ import org.hibernate.FetchMode;
  
 public class SignedDAO {  
 
-public boolean getAll(String email,String password){
+public boolean getAll(String email,String Password){
        List<User> list = new ArrayList<User>();
+      
        Session session = HibernateSessionManager.getSessionFactory().openSession();
        Transaction tx = null; 
-         User user =new User() ; 
-
-  
+       String generatedPassword=null;
+         User user;      
        try {
            tx = session.beginTransaction();
            tx.begin();
-
            list = session.createQuery("from User").list(); 
-
-		for(int i=0; i<list.size();i++){
-
-			user=(User)list.get(i);
-			if(user.getEmail().equals(email) && user.getPassword().equals(password)){
-                        
-				return true;
-			}
-		}
-          session.save(user);
-           tx.commit();
+           /*****password encription**********/
+           MessageDigest md = MessageDigest.getInstance("MD5");
+	   md.update(Password.getBytes());
+	   byte[] bytes = md.digest();
+	   StringBuilder sb = new StringBuilder();
+	   for(int i=0; i< bytes.length ;i++)
+	   {
+		sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
+	   }
+	   generatedPassword = sb.toString();
+           for(int i=0; i<list.size();i++){
+		user=(User)list.get(i);
 		
+		System.out.println("****************"+generatedPassword);
+		if(user.getUserName().equals(email) && user.getPassword().equals(generatedPassword)){
+			return true;
+		}
+	   }
+           tx.commit();
            } catch (Exception e) {
            if (tx != null) {
                tx.rollback();
@@ -42,8 +51,10 @@ public boolean getAll(String email,String password){
        } finally {
            session.close();
        }
+       return false;
        
-	return false;
-    }
+	}
+	
+    
 } 
 
