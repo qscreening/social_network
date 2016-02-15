@@ -1,18 +1,18 @@
 CREATE DATABASE social_network_development;
+use social_network_development;
 
 CREATE TABLE users(
-	userId integer(5)  not null AUTO_INCREMENT , 
+	userId integer(5) primary key NOT NULL AUTO_INCREMENT , 
 	userName VARCHAR(10) ,
-	email VARCHAR(30) not null , 
-	password VARCHAR(20) not null,
-	primary key(userId)
-        unique(email)
+	email VARCHAR(20) , 
+	password VARCHAR(50),
+	unique(email)
 );
 
 
 CREATE TABLE userProfiles(
-     userId integer(5), 
-     email VARCHAR(30) not null , 
+     userId integer(5) NOT NULL AUTO_INCREMENT, 
+     email VARCHAR(20) , 
      Phone BIGINT(15) ,
      image BLOB not null, 
      foreign key (userId) references users(userId)
@@ -20,37 +20,37 @@ CREATE TABLE userProfiles(
 
 
 CREATE TABLE posts(
-     userId integer(5) , 
+     userId integer(5) NOT NULL AUTO_INCREMENT, 
      content VARCHAR(100) , 
-     email VARCHAR(30) not null ,
+     email VARCHAR(15) ,
      foreign key (userId) references users(userId)
      );
 
 CREATE TABLE images(
-     userId integer(5) , 
+     userId integer(5) NOT NULL AUTO_INCREMENT, 
      content VARCHAR(100) , 
-     email VARCHAR(30) not null,
+     email VARCHAR(15) ,
      foreign key (userId) references users(userId)
      );
 
 
 CREATE TABLE videos(
-     userId integer(5) , 
+     userId integer(5) NOT NULL AUTO_INCREMENT , 
      content VARCHAR(100) , 
-     email VARCHAR(30) not null ,
+     email VARCHAR(15) ,
      foreign key (userId) references users(userId)
      );
 
 
 CREATE TABLE links(
-     userId integer(5) , 
+     userId integer(5) NOT NULL AUTO_INCREMENT , 
      content VARCHAR(100) , 
-     email VARCHAR(30) not null,
+     email VARCHAR(15) ,
      foreign key (userId) references users(userId)
      );
 
 
-	
+	/* users data */
 
 INSERT INTO users (userId, userName, email,password) VALUES 	
 	('1','Surya','thotasuryaprakash246@gmail.com','surya246'),
@@ -61,9 +61,9 @@ INSERT INTO users (userId, userName, email,password) VALUES
 	('6','Priyanka','priyankasiddana@gmail.com','priyanka');
 
 
+	/* userProfile data*/	
 
-
-INSERT INTO userProfile (userId,email,phone,image) VALUES	
+INSERT INTO userProfiles (userId,email,phone,image) VALUES	
 	('1','thotasuryaprakash246@gmail.com','9553118466',' '),		  	
 	('2','pradeeepkmalve@gmail.com','8019444890',''),
 	('3','chaitanyaeluri@gmail.com','1234567890',''),
@@ -72,7 +72,7 @@ INSERT INTO userProfile (userId,email,phone,image) VALUES
 	('6','priyankasiddana@gmail.com','123456789',' ');
 
 
-
+	/* posts data*/
 
 INSERT INTO posts(userId,content,email)	VALUES
 	('1','image','thotasuryaprakash246@gmail.com'),
@@ -83,7 +83,8 @@ INSERT INTO posts(userId,content,email)	VALUES
 	('6','video','priyankasiddana@gmail.com');
 
 
-	
+
+	/* groups tables */
 
 
 CREATE TABLE groups(
@@ -113,6 +114,9 @@ INSERT INTO groups(groupName,groupAdmin) values
 	(2, 5, 0),
 	(2, 6, 0);
 	
+
+
+
 
 
 
