@@ -19,23 +19,12 @@ public class SignedController {
 	@RequestMapping(value ="/signIn",method = RequestMethod.POST)
 	public boolean network(HttpServletRequest request,HttpServletResponse response)
            	throws Exception {
-           		System.out.println("************************enter to controller*************");
-		   	String user_email=request.getParameter("userName");
+           		String user_email=request.getParameter("userName");
 			String Password=request.getParameter("password");
 			User user=new User();
 			SignedDAO gld=new SignedDAO();
 			boolean result=gld.getAll(user_email,Password);
 			return result;
-			
-			/*List<User> list = new ArrayList<User>();
-			UserDAO dao = new UserDAO();
-			list = dao.getUserObj(user_email);
-			
-			Authorization author = new Authorization();
-			int s =author.checkOrCreateSession(request);
-			return s;*/
-			
-			
 		}
 	@RequestMapping(value ="/sesClose",method = RequestMethod.POST)
 	public boolean logOut(HttpServletRequest request,HttpServletResponse response)
