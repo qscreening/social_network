@@ -5,7 +5,7 @@ CREATE TABLE users(
 	userName VARCHAR(10) ,
 	email VARCHAR(30) not null , 
 	password VARCHAR(20) not null,
-	primary key(userId)
+	primary key(userId),
         unique(email)
 );
 
@@ -64,7 +64,7 @@ INSERT INTO users (userId, userName, email,password) VALUES
 
 
 
-INSERT INTO userProfile (userId,email,phone,image) VALUES	
+INSERT INTO userProfiles (userId,email,phone,image) VALUES	
 	('1','thotasuryaprakash246@gmail.com','9553118466'),		  	
 	('2','pradeeepkmalve@gmail.com','8019444890'),
 	('3','chaitanyaeluri@gmail.com','1234567890'),
