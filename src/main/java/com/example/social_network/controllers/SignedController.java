@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
 @RestController
 public class SignedController {
 	@RequestMapping(value ="/signIn",method = RequestMethod.POST)
-	public int network(HttpServletRequest request,HttpServletResponse response)
+	public boolean network(HttpServletRequest request,HttpServletResponse response)
            	throws Exception {
            		System.out.println("************************enter to controller*************");
 		   	String user_email=request.getParameter("userName");
@@ -25,15 +25,15 @@ public class SignedController {
 			User user=new User();
 			SignedDAO gld=new SignedDAO();
 			boolean result=gld.getAll(user_email,Password);
-			List<User> list = new ArrayList<User>();
-      
+			return result;
 			
+			/*List<User> list = new ArrayList<User>();
 			UserDAO dao = new UserDAO();
 			list = dao.getUserObj(user_email);
 			
 			Authorization author = new Authorization();
 			int s =author.checkOrCreateSession(request);
-			return s;
+			return s;*/
 			
 			
 		}

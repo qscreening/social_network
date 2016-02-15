@@ -19,12 +19,9 @@ public List<User> getAll(){
         try {
             tx = session.beginTransaction();
             tx.begin();
-           // list = session.createQuery("from User").list(); 
-			Criteria criteria = session.createCriteria(User.class);
-			criteria.setFetchMode("Post", FetchMode.JOIN);
-			list = criteria.list();
-			session.save(list);
-			tx.commit();                      
+            list = session.createQuery("from User").list(); 
+	    session.save(list);
+	    tx.commit();                      
         } catch (Exception e) {
             if (tx != null) {
                 tx.rollback();
