@@ -23,9 +23,8 @@ public boolean getAll(String email,String Password){
        try {
            tx = session.beginTransaction();
            tx.begin();
-         
-           //String qry="from "+ tableName+" where id="+id;
            list = session.createQuery("from User").list(); 
+           /*****password encription**********/
            MessageDigest md = MessageDigest.getInstance("MD5");
 	   md.update(Password.getBytes());
 	   byte[] bytes = md.digest();
@@ -51,8 +50,8 @@ public boolean getAll(String email,String Password){
            e.printStackTrace();
        } finally {
            session.close();
-       	}
-      	 return false;
+       }
+       return false;
        
 	}
 	

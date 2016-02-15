@@ -23,9 +23,8 @@ public class SignUpDao{
 		try {
 			tx = session.getTransaction();
 			tx.begin();
-
-
 			User user = new User();
+			/**********PASSWORD ENCRIPTED**********/
 			MessageDigest md = MessageDigest.getInstance("MD5");
 			md.update(password.getBytes());
 			byte[] bytes = md.digest();
@@ -35,7 +34,6 @@ public class SignUpDao{
 				sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
 			}
 			generatedPassword = sb.toString();
-			
 			System.out.println("************"+generatedPassword);
 			for(int i=0; i < list.size(); i++){
 				user = (User)list.get(i);
@@ -45,9 +43,7 @@ public class SignUpDao{
 			}
 			user.setUserName(fullName);
 			user.setEmail(email);
-			user.setPassword(generatedPassword);
-			System.out.println("*****************"+user);
-			
+			user.setPassword(password);
 			session.save(user);
 			tx.commit();
 			
