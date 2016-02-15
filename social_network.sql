@@ -4,39 +4,26 @@ use social_network_development;
 CREATE TABLE users(
 	userId integer(5) primary key NOT NULL AUTO_INCREMENT , 
 	userName VARCHAR(10) ,
-<<<<<<< HEAD
-	email VARCHAR(20) , 
-	password VARCHAR(50),
-	unique(email)
-=======
 	email VARCHAR(30) not null , 
 	password VARCHAR(20) not null,
 	primary key(userId),
         unique(email)
->>>>>>> 632ae3263df43472c0e6dda5200a2491c850221c
 );
 
 
 CREATE TABLE userProfiles(
-<<<<<<< HEAD
-     userId integer(5) NOT NULL AUTO_INCREMENT, 
-     email VARCHAR(20) , 
-     Phone BIGINT(15) ,
-     image BLOB not null, 
-     foreign key (userId) references users(userId)
-=======
+
 	id integer (10) not null AUTO_INCREMENT,
 	userId integer(5), 
 	email VARCHAR(30) not null , 
 	Phone BIGINT(15) ,
 	primary key(id),
 	foreign key (userId) references users(userId)
->>>>>>> 632ae3263df43472c0e6dda5200a2491c850221c
      );
 
 
 CREATE TABLE posts(
-<<<<<<< HEAD
+
      userId integer(5) NOT NULL AUTO_INCREMENT, 
      content VARCHAR(100) , 
      email VARCHAR(15) ,
@@ -48,51 +35,35 @@ CREATE TABLE images(
      content VARCHAR(100) , 
      email VARCHAR(15) ,
      foreign key (userId) references users(userId)
-=======
-	userId integer(5) , 
-	content VARCHAR(100) , 
-	email VARCHAR(30) not null ,
-	foreign key (userId) references users(userId)
-     );
+
 
 CREATE TABLE images(
 	userId integer(5) , 
 	content VARCHAR(100) , 
 	email VARCHAR(30) not null,
 	foreign key (userId) references users(userId)
->>>>>>> 632ae3263df43472c0e6dda5200a2491c850221c
+
      );
 
 
 CREATE TABLE videos(
-<<<<<<< HEAD
-     userId integer(5) NOT NULL AUTO_INCREMENT , 
-     content VARCHAR(100) , 
-     email VARCHAR(15) ,
-     foreign key (userId) references users(userId)
-=======
+
 	userId integer(5) , 
 	content VARCHAR(100) , 
 	email VARCHAR(30) not null ,
 	foreign key (userId) references users(userId)
->>>>>>> 632ae3263df43472c0e6dda5200a2491c850221c
+
      );
 
 
 CREATE TABLE links(
-<<<<<<< HEAD
-     userId integer(5) NOT NULL AUTO_INCREMENT , 
-     content VARCHAR(100) , 
-     email VARCHAR(15) ,
-     foreign key (userId) references users(userId)
-     );
-=======
+
 	userId integer(5) , 
 	content VARCHAR(100) , 
 	email VARCHAR(30) not null,
 	foreign key (userId) references users(userId)
 	);
->>>>>>> 632ae3263df43472c0e6dda5200a2491c850221c
+
 
 
 	/* users data */
@@ -108,15 +79,7 @@ INSERT INTO users (userId, userName, email,password) VALUES
 
 	/* userProfile data*/	
 
-<<<<<<< HEAD
-INSERT INTO userProfiles (userId,email,phone,image) VALUES	
-	('1','thotasuryaprakash246@gmail.com','9553118466',' '),		  	
-	('2','pradeeepkmalve@gmail.com','8019444890',''),
-	('3','chaitanyaeluri@gmail.com','1234567890',''),
-	('4','kartheekchilvery@gmail.com','1234567890',' '),
-	('5','geet2anju@gmail.com','1234567890',''),
-	('6','priyankasiddana@gmail.com','123456789',' ');
-=======
+
 
 INSERT INTO userProfiles (userId,email,phone,image) VALUES	
 	('1','thotasuryaprakash246@gmail.com','9553118466'),		  	
@@ -125,7 +88,7 @@ INSERT INTO userProfiles (userId,email,phone,image) VALUES
 	('4','kartheekchilvery@gmail.com','1234567890'),
 	('5','geet2anju@gmail.com','1234567890'),
 	('6','priyankasiddana@gmail.com','123456789');
->>>>>>> 632ae3263df43472c0e6dda5200a2491c850221c
+
 
 
 	/* posts data*/
@@ -138,15 +101,13 @@ INSERT INTO posts(userId,content,email)	VALUES
 	('5','video','geet2anju@gmail.com'),
 	('6','video','priyankasiddana@gmail.com');
 
-<<<<<<< HEAD
+
 
 
 	/* groups tables */
 
 
-=======
-	
->>>>>>> 632ae3263df43472c0e6dda5200a2491c850221c
+
 CREATE TABLE groups(
 	groupId integer(10) primary key not null AUTO_INCREMENT,
 	groupName VARCHAR(50) not null,
